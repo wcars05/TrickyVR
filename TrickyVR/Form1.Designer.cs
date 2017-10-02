@@ -34,6 +34,7 @@
             this.pictureBoxR = new System.Windows.Forms.PictureBox();
             this.buttonleft = new System.Windows.Forms.Button();
             this.buttonright = new System.Windows.Forms.Button();
+            this.buttonAbout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxR)).BeginInit();
             this.SuspendLayout();
@@ -98,12 +99,23 @@
             this.buttonright.UseVisualStyleBackColor = true;
             this.buttonright.Click += new System.EventHandler(this.buttonright_Click);
             // 
+            // buttonAbout
+            // 
+            this.buttonAbout.Location = new System.Drawing.Point(505, 13);
+            this.buttonAbout.Name = "buttonAbout";
+            this.buttonAbout.Size = new System.Drawing.Size(75, 23);
+            this.buttonAbout.TabIndex = 6;
+            this.buttonAbout.Text = "About";
+            this.buttonAbout.UseVisualStyleBackColor = true;
+            this.buttonAbout.Click += new System.EventHandler(this.buttonAbout_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(1111, 513);
+            this.Controls.Add(this.buttonAbout);
             this.Controls.Add(this.buttonright);
             this.Controls.Add(this.buttonleft);
             this.Controls.Add(this.pictureBoxR);
@@ -130,6 +142,7 @@
         private System.Windows.Forms.PictureBox pictureBoxR;
         private System.Windows.Forms.Button buttonleft;
         private System.Windows.Forms.Button buttonright;
+        private System.Windows.Forms.Button buttonAbout;
     }
 }
 

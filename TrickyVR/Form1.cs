@@ -52,7 +52,7 @@ namespace TrickyVR
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
             // use this to move the right picture left and right depending on the key
-            Console.WriteLine(e.KeyChar.ToString());
+            //Console.WriteLine(e.KeyChar.ToString());
         }
 
         private void buttonleft_Click(object sender, EventArgs e)
@@ -63,6 +63,11 @@ namespace TrickyVR
         private void buttonright_Click(object sender, EventArgs e)
         {
             pictureBoxR.Location = new Point(pictureBoxR.Location.X + 1, pictureBoxR.Location.Y);
+        }
+
+        private void buttonAbout_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This is a tool inteneded for use with VR head sets that can duplicate a desktop for display\nIt is tuned to run at 1920x1080.Load a magic eye image. Enjoy!", "TrickyVR");
         }
     }
 }
