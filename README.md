@@ -1,0 +1,27 @@
+# TrickyVR
+Simple desktop application to use with Occulus Rift (DK1) or any other vr head set that can be use as a cloned desktop video device. Runs as full screen after image is loaded and positions the images for viewing. Also features a fine tune feature for moving the right image left and right.
+
+﻿Welcome to TrickyVR
+
+This is a simple application that demostrates a way to load an view optical illusion images via a headset in a SIMPLE application.
+This project works with Visual Studio 2015
+
+The intent is to have something useful for your Occulus Rift DK1.
+
+What this does do:
+	Shows the minimal effort to have an image that is aligned for each eye to view.
+	Provides a basic example of a Visual C# application with a WinForm and simple UI.
+
+What this doesn't do:
+	Does not correct for the lense skew in the headset.
+	Does not manage your monitors/displays
+	
+
+
+Todo:
+	Image drag and drop
+	Url loaded images?
+
+As of initial release there is no licensing info, this is a trivial exmaple that was put together for educational purposes.
+
+No warranty implied or expressed. Use at your own risk.
