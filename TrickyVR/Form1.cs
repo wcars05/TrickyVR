@@ -44,6 +44,10 @@ namespace TrickyVR
                 //pictureBoxL.Location.Y = 100;
                 // might need some red alignment indicators at the top center of the magiceyes
 
+                // base the image box max setting based on the form's resolution settigns
+                pictureBoxL.MaximumSize = new Size(this.Width / 2, this.Height / 2);
+                pictureBoxR.MaximumSize = new Size(this.Width / 2, this.Height / 2);
+
 
             }
             
