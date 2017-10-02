@@ -61,18 +61,19 @@
             // 
             // pictureBoxL
             // 
-            this.pictureBoxL.Location = new System.Drawing.Point(37, 153);
-            this.pictureBoxL.MaximumSize = new System.Drawing.Size(960, 540);
+            this.pictureBoxL.Location = new System.Drawing.Point(13, 42);
             this.pictureBoxL.Name = "pictureBoxL";
             this.pictureBoxL.Size = new System.Drawing.Size(100, 50);
             this.pictureBoxL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBoxL.TabIndex = 2;
             this.pictureBoxL.TabStop = false;
+            this.pictureBoxL.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBoxL_DragDrop);
+            this.pictureBoxL.DragEnter += new System.Windows.Forms.DragEventHandler(this.pictureBoxL_DragEnter);
+            this.pictureBoxL.DragOver += new System.Windows.Forms.DragEventHandler(this.pictureBoxL_DragOver);
             // 
             // pictureBoxR
             // 
-            this.pictureBoxR.Location = new System.Drawing.Point(523, 153);
-            this.pictureBoxR.MaximumSize = new System.Drawing.Size(960, 540);
+            this.pictureBoxR.Location = new System.Drawing.Point(480, 96);
             this.pictureBoxR.Name = "pictureBoxR";
             this.pictureBoxR.Size = new System.Drawing.Size(100, 50);
             this.pictureBoxR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -126,6 +127,10 @@
             this.ShowIcon = false;
             this.Text = "TrickVR";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.ResizeEnd += new System.EventHandler(this.Form1_ResizeEnd);
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form1_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form1_DragEnter);
+            this.DragOver += new System.Windows.Forms.DragEventHandler(this.Form1_DragOver);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxR)).EndInit();

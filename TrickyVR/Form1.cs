@@ -15,6 +15,8 @@ namespace TrickyVR
         public Form1()
         {
             InitializeComponent();
+            this.AllowDrop = true;
+            
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -72,6 +74,103 @@ namespace TrickyVR
         private void buttonAbout_Click(object sender, EventArgs e)
         {
             MessageBox.Show("This is a tool inteneded for use with VR head sets that can duplicate a desktop for display\nIt is tuned to run at 1920x1080.Load a magic eye image. Enjoy!", "TrickyVR");
+        }
+
+        private void Form1_DragDrop(object sender, DragEventArgs e)
+        {
+            // maybe load an image?
+            
+
+            Image img = (Image)e.Data.GetData(DataFormats.Bitmap);
+            pictureBoxL.Image = img;
+            pictureBoxR.Image = img;
+
+            // then set the position information  of where they need to go in the window
+
+            //pictureBoxL.Height;
+            //;
+            pictureBoxL.Location = new Point(this.Width / 4 - pictureBoxL.Width / 2, this.Height / 2 - pictureBoxL.Height / 2);// = 100;
+            pictureBoxR.Location = new Point(this.Width / 4 + this.Width / 2 - pictureBoxL.Width / 2, this.Height / 2 - pictureBoxL.Height / 2);// = 100;
+                                                                                                                                                //pictureBoxL.Location.Y = 100;
+                                                                                                                                                // might need some red alignment indicators at the top center of the magiceyes
+
+            // base the image box max setting based on the form's resolution settigns
+            pictureBoxL.MaximumSize = new Size(this.Width / 2, this.Height / 2);
+            pictureBoxR.MaximumSize = new Size(this.Width / 2, this.Height / 2);
+        }
+
+        private void Form1_DragEnter(object sender, DragEventArgs e)
+        {
+            //DataFormats.Bitmap
+            if (e.Data.GetDataPresent(DataFormats.Bitmap))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void pictureBoxL_DragDrop(object sender, DragEventArgs e)
+        {
+            Image img = (Image)e.Data.GetData(DataFormats.Bitmap);
+            pictureBoxL.Image = img;
+            pictureBoxR.Image = img;
+
+            // then set the position information  of where they need to go in the window
+
+            //pictureBoxL.Height;
+            //;
+            pictureBoxL.Location = new Point(this.Width / 4 - pictureBoxL.Width / 2, this.Height / 2 - pictureBoxL.Height / 2);// = 100;
+            pictureBoxR.Location = new Point(this.Width / 4 + this.Width / 2 - pictureBoxL.Width / 2, this.Height / 2 - pictureBoxL.Height / 2);// = 100;
+                                                                                                                                                //pictureBoxL.Location.Y = 100;
+                                                                                                                                                // might need some red alignment indicators at the top center of the magiceyes
+
+            // base the image box max setting based on the form's resolution settigns
+            pictureBoxL.MaximumSize = new Size(this.Width / 2, this.Height / 2);
+            pictureBoxR.MaximumSize = new Size(this.Width / 2, this.Height / 2);
+        }
+
+        private void pictureBoxL_DragOver(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Bitmap))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void pictureBoxL_DragEnter(object sender, DragEventArgs e)
+        {
+            
+        }
+
+        private void Form1_DragOver(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Bitmap))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void Form1_ResizeEnd(object sender, EventArgs e)
+        {
+            pictureBoxL.Location = new Point(this.Width / 4 - pictureBoxL.Width / 2, this.Height / 2 - pictureBoxL.Height / 2);// = 100;
+            pictureBoxR.Location = new Point(this.Width / 4 + this.Width / 2 - pictureBoxL.Width / 2, this.Height / 2 - pictureBoxL.Height / 2);// = 100;
+                                                                                                                                                //pictureBoxL.Location.Y = 100;
+                                                                                                                                                // might need some red alignment indicators at the top center of the magiceyes
+
+            // base the image box max setting based on the form's resolution settigns
+            pictureBoxL.MaximumSize = new Size(this.Width / 2, this.Height / 2);
+            pictureBoxR.MaximumSize = new Size(this.Width / 2, this.Height / 2);
         }
     }
 }
